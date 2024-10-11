@@ -9,7 +9,7 @@
 
     <div class="grid feature-list is-col-min-12 is-gap-4">
 
-      <div class="cell" @click="showVideo('img/demo.mp4')">
+      <div class="cell" @click="showVideo('img/chat.mp4')">
         <Feature>
           <template v-slot:icon><i class="bi-chat"></i></template>
           <template v-slot:title>Chat</template>
@@ -31,7 +31,7 @@
         </Feature>
       </div>
 
-      <div class="cell" @click="showVideo('img/demo.mp4')">
+      <div class="cell" @click="showVideo('img/commands.mp4')">
         <Feature>
           <template v-slot:icon><i class="bi-magic"></i></template>
           <template v-slot:title>AI Commands</template>
@@ -42,7 +42,7 @@
         </Feature>
       </div>
 
-      <div class="cell" @click="showVideo('img/demo.mp4')">
+      <div class="cell" @click="showVideo('img/anywhere.mp4')">
         <Feature>
           <template v-slot:icon><i class="bi-terminal"></i></template>
           <template v-slot:title>Prompt Anywhere</template>
@@ -53,7 +53,7 @@
         </Feature>
       </div>
 
-      <div class="cell" @click="showVideo('img/demo.mp4')">
+      <div class="cell" @click="showVideo('img/experts.mp4')">
         <Feature>
           <template v-slot:icon><i class="bi-person-vcard"></i></template>
           <template v-slot:title>Experts</template>
