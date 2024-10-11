@@ -1,0 +1,116 @@
+
+<template>
+  <div ref="wrapper" class="topbar-wrapper">
+    <div class="topbar">
+      <div class="logo">
+        <img src="img/logo.png" alt="logo" />
+        Witsy
+      </div>
+      <ul class="menu menu-left">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li class="github"><a href="https://github.com/nbonamy/witsy" target="_blank"><img src="https://www.svgrepo.com/show/343674/github.svg"> GitHub</a></li>
+      </ul>
+      <ul class="menu menu-right">
+        <li class="download"><a href="#">Download</a></li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<script setup>
+
+import { ref, onMounted } from 'vue'
+
+const wrapper = ref(null)
+
+onMounted(() => {
+  document.addEventListener('scroll', (ev) => {
+    wrapper.value.classList.toggle('scrolled', document.body.scrollTop > 0)
+  })
+})
+
+
+</script>
+
+<style scoped>
+
+.topbar-wrapper {
+
+  position: fixed;
+  background-color: var(--background-color);
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+  width: 100%;
+  z-index: 10;
+
+  &.scrolled {
+    background-color: var(--background-color-alpha);
+    border-bottom: 1px solid #ddd;
+  }
+
+  .topbar {
+
+    max-width: 60rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+
+    img {
+      height: 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #333;
+
+      img {
+        margin-right: 0.75rem;
+      }
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+
+      li {
+        font-weight: 400;
+        font-size: 1rem;
+        
+        a {
+          color: #444;
+          text-decoration: none;
+
+          &:hover {
+            color: var(--accent-color);
+          }
+        }
+      }
+
+      .github {
+        font-weight: 500;
+        img {
+          height: 1.5rem;
+          margin-right: 0.2rem;
+          position: relative;
+          top: 3px;
+        }
+      }
+    }
+
+    .menu-right {
+      margin-left: auto;
+
+      .download {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+</style>
