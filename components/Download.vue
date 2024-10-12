@@ -11,9 +11,15 @@
         <br/><span class="sub">Mac Intel architecture</span>
       </button>
     </div>
-    <div v-else>
+    <div v-else-if="platform.pf === 'win32' || platform.pf === 'linux'">
       <button class="button" @click="download(platform.pf)">
-        Download for {{ platform.os }}
+        Download for {{ platform.os }} {{ platform.ver }}
+      </button>
+    </div>
+    <div v-else>
+      <button class="button">
+        Sorry. Witsy is not<br/>
+        available for your device
       </button>
     </div>
     <div class="others">
@@ -69,7 +75,7 @@ const download = async (platform, arch) => {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0rem;
     gap: 1rem;
   }
 
@@ -90,6 +96,7 @@ const download = async (platform, arch) => {
   }
 
   .others, .others a {
+    margin-top: 0.75rem;
     color: #888;
     font-size: 0.9rem;
   }

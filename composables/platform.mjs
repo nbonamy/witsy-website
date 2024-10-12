@@ -1,29 +1,31 @@
 
+import UAParser from 'https://cdn.jsdelivr.net/npm/ua-parser-js@1.0.39/dist/ua-parser.min.js'
+
+const system = () => {
+  const ua = new UAParser(window.navigator.userAgent)
+  const os = ua.getOS()
+  return (os.name === 'Mac OS') ? 'macOS' : os.name
+}
+
+const version = () => {
+  const ua = new UAParser(window.navigator.userAgent)
+  const os = ua.getOS()
+  return os.version
+}
+
 const platform = () => {
-  const ua = window.navigator.userAgent.toLocaleLowerCase();
-  if (ua.includes('macintosh')) return 'darwin';
-  if (ua.includes('mac os x')) return 'darwin';
-  if (ua.includes('windows')) return 'win32';
-  if (ua.includes('win32')) return 'win32';
-  if (ua.includes('linux')) return 'linux';
-  if (ua.includes('unix')) return 'linux';
+  const os = system()
+  if (os === 'macOS') return 'darwin'
+  if (os === 'Windows') return 'win32'
+  if (os === 'Linux') return 'linux'
   return null
 }
 
-const os = () => {
-  const pf = platform();
-  if (pf === 'darwin') return 'macOS';
-  if (pf === 'win32') return 'Windows';
-  if (pf === 'linux') return 'Linux';
-  return null;
-}
-
 export const usePlatform = () => {
-
   return {
     ua: window.navigator.userAgent,
     pf: platform(),
-    os: os(),
+    os: system(),
+    ver: version(),
   }
-
 }
