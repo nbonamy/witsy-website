@@ -8,8 +8,8 @@
       </div>
       <ul class="menu menu-left">
         <li><a href="#features">Features</a></li>
-        <li><a href="#faq">FAQ</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li class="github"><a href="https://github.com/nbonamy/witsy" target="_blank"><img src="https://www.svgrepo.com/show/343674/github.svg"> GitHub</a></li>
       </ul>
       <ul class="menu menu-right">
