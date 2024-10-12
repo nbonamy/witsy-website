@@ -17,6 +17,7 @@
       </button>
     </div>
     <div class="others">
+      <span v-if="version">Latest version {{ version }},&nbsp;</span>
       <a href="https://github.com/nbonamy/witsy/releases" target="_blank">Other versions</a>
     </div>
   </div>
@@ -24,11 +25,18 @@
 
 <script setup>
 
+import { ref, onMounted } from 'vue'
 import { usePlatform } from '../composables/platform.mjs'
 import { useDownload } from '../composables/download.mjs'
 
 const platform = usePlatform()
 const downloader = useDownload()
+
+const version = ref(null)
+
+onMounted(async () => {
+  version.value = await downloader.version()
+})
 
 const download = async (platform, arch) => {
 
@@ -81,7 +89,7 @@ const download = async (platform, arch) => {
     }
   }
 
-  .others a {
+  .others, .others a {
     color: #888;
     font-size: 0.9rem;
   }

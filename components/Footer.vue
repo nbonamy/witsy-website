@@ -11,7 +11,7 @@
       </div>
 
       <div class="column">
-        <h1>Get notified on new features and updates</h1>
+        <h1>Get notified of new features and updates</h1>
         <div class="field has-addons">
           <div class="control">
             <input class="input is-small" type="text" placeholder="Email address">
@@ -25,7 +25,7 @@
     </div>
 
     <div class="signature">
-      &copy; Nicolas Bonamy 2024
+      &copy; Nicolas Bonamy {{ new Date().getFullYear() }}
     </div>
 
   </div>

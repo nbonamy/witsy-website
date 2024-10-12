@@ -2,7 +2,7 @@
 import { usePlatform } from './platform.mjs'
 
 const version = async () => {
-  const response = await fetch('/update', {
+  const response = await fetch('https://witsyai.com/update', {
     mode: 'cors'
   })
   const info = await response.json()
