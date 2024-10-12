@@ -52,6 +52,16 @@ let scrollBack = false
 
 onMounted(() => {
 
+  // we need to compensate for the fixed header
+  // so when a hash is clicked remember that
+  document.addEventListener('click', (e) => {
+    if (e.target.hash) {
+      scrollBack = true
+    }
+  })
+
+  // scroll back to compensate for the fixed header
+  // but do it only once (yeah it's a hack)
   window.addEventListener('scroll', () => {
     if (scrollBack) {
       scrollBack = false
@@ -59,13 +69,6 @@ onMounted(() => {
     }
   })
 
-  document.querySelectorAll('a').forEach((a) => {
-    a.addEventListener('click', (e) => {
-      if (e.target.hash) {
-        scrollBack = true
-      }
-    })
-  })
 })
 
 </script>
