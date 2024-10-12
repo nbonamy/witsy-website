@@ -15,7 +15,21 @@
       moduleCache: {
         vue: Vue
       },
-      async getFile(url) {
+      compiledCache: {
+        set(key, str) {
+          for (;;) {
+            try {
+              window.localStorage.setItem(key, str);
+              break;
+            } catch(ex) {
+              window.localStorage.removeItem(window.localStorage.key(0));
+            }
+          }
+        },
+        get(key) {
+          return window.localStorage.getItem(key) ?? undefined;
+        },
+      },      async getFile(url) {
         const res = await fetch(url);
         if (!res.ok) {
           throw Object.assign(new Error(res.statusText + ' ' + url), { res });
