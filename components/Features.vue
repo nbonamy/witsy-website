@@ -135,4 +135,21 @@ const stopVideo = () => {
 
 }
 
+@media (max-width: 980px) {
+  .features {
+    .modal {
+      right: 12; /* don't really know why */
+      .modal-content {
+        margin: 0rem;
+        video {
+          min-width: auto;
+          min-height: auto;
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+    }
+  }
+}
+
 </style>
