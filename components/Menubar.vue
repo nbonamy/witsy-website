@@ -3,8 +3,10 @@
   <div ref="wrapper" class="topbar-wrapper">
     <div class="topbar">
       <div class="logo">
-        <img src="img/logo.png" alt="logo" />
-        Witsy
+        <a href="#">
+          <img src="img/logo.png" alt="logo" />
+          Witsy
+        </a>
       </div>
       <ul class="menu menu-left">
         <li><a href="#features">Features</a></li>
@@ -56,13 +58,13 @@ onMounted(() => {
     display: flex;
     padding: 0 2rem;
     align-items: center;
-    gap: 6rem;
+    gap: 4rem;
 
     img {
       height: 2rem;
     }
 
-    .logo {
+    .logo a {
       display: flex;
       align-items: center;
       font-size: 1.5rem;
@@ -74,6 +76,11 @@ onMounted(() => {
       }
     }
 
+    a {
+      color: #444;
+      text-decoration: none;
+    }
+
     .menu {
       display: flex;
       align-items: center;
@@ -83,17 +90,13 @@ onMounted(() => {
         font-weight: 400;
         font-size: 1rem;
         
-        a {
-          color: #444;
-          text-decoration: none;
-
-          &:hover {
-            color: var(--accent-color);
-          }
+        a:hover {
+          color: var(--accent-color);
         }
       }
 
       .github {
+        margin-left: 0.5rem;
         font-weight: 500;
         img {
           height: 1.5rem;
