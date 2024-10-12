@@ -7,7 +7,7 @@
     
     <div class="title">Features - Click any feature to see it in action!</div>
 
-    <div class="grid feature-list is-col-min-12 is-gap-4">
+    <div class="grid feature-list is-col-min-10 is-gap-4">
 
       <div class="cell" @click="showVideo('img/chat.mp4')">
         <Feature>
