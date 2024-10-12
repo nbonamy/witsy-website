@@ -35,7 +35,6 @@ import Download from '../components/Download.vue'
   .maintitle {
 
     text-align: center;
-    margin-top: 4rem;
 
     .title {
       margin-bottom: 2rem;

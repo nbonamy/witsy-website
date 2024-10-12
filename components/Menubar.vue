@@ -3,19 +3,20 @@
   <div ref="wrapper" class="topbar-wrapper">
     <div class="topbar">
       <div class="logo">
-        <a href="#">
+        <RouterLink :to="{ path: '/', hash: '#header' }">
           <img src="img/logo.png" alt="logo" />
           Witsy
-        </a>
+        </RouterLink>
       </div>
       <ul class="menu menu-left">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><RouterLink :to="{ path: '/', hash: '#features' }">Features</RouterLink></li>
+        <li><RouterLink :to="{ path: '/help' }">Help</RouterLink></li>
+        <li><RouterLink :to="{ path: '/', hash: '#faq' }">FAQ</RouterLink></li>
+        <li><RouterLink :to="{ path: '/', hash: '#testimonials' }">Testimonials</RouterLink></li>
         <li class="github"><a href="https://github.com/nbonamy/witsy" target="_blank"><img src="https://www.svgrepo.com/show/343674/github.svg"> GitHub</a></li>
       </ul>
       <ul class="menu menu-right">
-        <li class="download"><a href="#">Download</a></li>
+        <li><RouterLink :to="{ path: '/', hash: '#header' }" class="download">Download</RouterLink></li>
       </ul>
     </div>
   </div>
@@ -29,10 +30,9 @@ const wrapper = ref(null)
 
 onMounted(() => {
   document.addEventListener('scroll', (ev) => {
-    wrapper.value.classList.toggle('scrolled', document.body.scrollTop > 0)
+    wrapper.value?.classList.toggle('scrolled', document.body.scrollTop > 0)
   })
 })
-
 
 </script>
 

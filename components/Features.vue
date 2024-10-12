@@ -3,7 +3,7 @@
 
   <div class="features">
 
-    <a name="features"></a>
+    <a id="features" name="features"></a>
 
     <div class="title">Features - Click any feature to see it in action!</div>
 

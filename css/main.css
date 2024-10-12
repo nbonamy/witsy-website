@@ -32,3 +32,52 @@ a {
   text-underline-offset: 0.2em;
   text-decoration-thickness: 0.5px;
 }
+
+header {
+  padding-bottom: 4rem;
+}
+
+section {
+  padding: 6rem 0rem;
+}
+
+section:first-of-type {
+  padding-top: 4rem;
+}
+
+section > * { 
+  max-width: 60rem;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+section.light {
+  background-color: transparent;
+  * {
+    color: black;
+  }
+}
+
+section.white {
+  background-color: white;
+  * {
+    color: black;
+  }
+}
+
+section.dark {
+  background-color: black;
+  * {
+    color: white !important;
+  }
+}
+
+@media (max-width: 980px) {
+  header {
+    padding-bottom: 0rem;
+  }
+  section:not(:first-of-type) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}

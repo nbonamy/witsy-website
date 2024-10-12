@@ -2,7 +2,7 @@
 
   <div class="faq">
 
-    <a name="faq"></a>
+    <a id="faq" name="faq"></a>
 
     <div class="title">Frequently Asked Questions</div>
 
@@ -25,7 +25,9 @@
 
         <div class="question">
           <div class="q">How do I get started?</div>
-          <div class="a">Simply download the app for your platform and start using it. No sign-up required.</div>
+          <div class="a">Simply download the app for your platform and start using it. No sign-up required. Additional setup
+            is required to use models, such as providing API keys from the providers of your choice.
+            <RouterLink :to="{ path: '/help' }">Help</RouterLink> is available in case you need it.</div>
         </div>
 
         <div class="question">

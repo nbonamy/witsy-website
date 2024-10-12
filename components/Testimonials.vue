@@ -3,7 +3,7 @@
 
   <div class="testimonials">
 
-    <a name="testimonials"></a>
+    <a id="testimonials" name="testimonials"></a>
 
     <div class="title">Testimonials</div>
 
