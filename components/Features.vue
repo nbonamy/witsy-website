@@ -20,7 +20,7 @@
         </Feature>
       </div>
 
-      <div class="cell" @click="showVideo('img/demo.mp4')">
+      <div class="cell" @click="showVideo('img/scratchpad.mp4')">
         <Feature>
           <template v-slot:icon><i class="bi-file-earmark-text"></i></template>
           <template v-slot:title>Scratchpad</template>

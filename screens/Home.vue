@@ -12,7 +12,7 @@
   </section>
 
   <section class="dark">
-    <Demo />
+    <Video title="Write content 10 times faster!" src="img/scratchpad.mp4" />
   </section>
 
   <section class="light">
@@ -20,18 +20,53 @@
   </section>
 
   <section class="dark">
+    <Video title="Use GenAI in any application!" src="img/anywhere.mp4" />
+  </section>
+
+  <section class="light">
+    <Testimonials />
+  </section>
+
+  <section class="dark">
     <FAQ />
+  </section>
+
+  <section class="white">
+    <Footer />
   </section>
 
 </template>
 
 <script setup>
 
+import { onMounted } from 'vue'
 import Menubar from '../components/Menubar.vue'
 import Hero from '../components/Hero.vue'
-import Demo from '../components/Demo.vue'
+import Video from '../components/Video.vue'
 import Features from '../components/Features.vue'
 import FAQ from '../components/FAQ.vue'
+import Testimonials from '../components/Testimonials.vue'
+import Footer from '../components/Footer.vue'
+
+let scrollBack = false
+
+onMounted(() => {
+
+  window.addEventListener('scroll', () => {
+    if (scrollBack) {
+      scrollBack = false
+      window.scrollBy({ top: -96, behavior: 'instant' })
+    }
+  })
+
+  document.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      if (e.target.hash) {
+        scrollBack = true
+      }
+    })
+  })
+})
 
 </script>
 
@@ -52,6 +87,13 @@ section > * {
 }
 
 section.light {
+  background-color: transparent;
+  * {
+    color: black;
+  }
+}
+
+section.white {
   background-color: white;
   * {
     color: black;
