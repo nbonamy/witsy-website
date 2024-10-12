@@ -54,6 +54,7 @@ onMounted(() => {
     max-width: 60rem;
     margin: 0 auto;
     display: flex;
+    padding: 0 2rem;
     align-items: center;
     gap: 6rem;
 
