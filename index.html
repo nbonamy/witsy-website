@@ -29,8 +29,9 @@
         get(key) {
           return window.localStorage.getItem(key) ?? undefined;
         },
-      },      async getFile(url) {
-        const res = await fetch(url);
+      },
+      async getFile(url) {
+        const res = await fetch(`${url}?${Date.parse(new Date()).toString()}`);
         if (!res.ok) {
           throw Object.assign(new Error(res.statusText + ' ' + url), { res });
         }
