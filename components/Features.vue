@@ -1,17 +1,17 @@
 
 <template>
 
-  <div class='features'>
+  <div class="features">
 
-    <a name='features'></a>
+    <a name="features"></a>
 
-    <div class='title'>Features - Click any feature to see it in action!</div>
+    <div class="title">Features - Click any feature to see it in action!</div>
 
-    <div class='grid feature-list is-col-min-10 is-gap-4'>
+    <div class="grid feature-list is-col-min-10 is-gap-4">
 
-      <div class='cell' @click='showVideo(`img/${feature.video}`)' v-for='feature in features' :key='feature.video'>
+      <div class="cell" @click="feature.video ? showVideo(`img/${feature.video}`) : () => {}" v-for="feature in features" :key="feature.video">
         <Feature :has-video="feature.video != null">
-          <template v-slot:icon><i :class='feature.icon'></i></template>
+          <template v-slot:icon><i :class="feature.icon"></i></template>
           <template v-slot:title>{{ feature.title }}</template>
           <template v-slot:description>{{ feature.description }}</template>
         </Feature>
@@ -19,10 +19,11 @@
 
     </div>
 
-    <div class='modal is-active' v-if='video'>
-      <div class='modal-background' @click='stopVideo()'></div>
-      <div class='modal-content'>
-        <AutoplayVideo id='feature' :src='video' />
+    <div class="modal is-active" v-if="video">
+      <div class="modal-background" @click="stopVideo()"></div>
+      <div class="modal-content">
+        <div class="is-overlay"></div>
+        <AutoplayVideo id="feature" :src="video" />
       </div>
     </div>
 
@@ -112,6 +113,24 @@ const stopVideo = () => {
   .title {
     margin-bottom: 3rem;
     font-size: 2rem;
+  }
+
+  .modal {
+    .modal-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .is-overlay {
+        background-color: black;
+      }
+
+      video {
+        min-width: 640px;
+        min-height: 498px;
+        z-index: calc(var(--bulma-modal-z) + 1);
+      }
+    }
   }
 
 }
