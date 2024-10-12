@@ -2,13 +2,11 @@
 import { usePlatform } from './platform.mjs'
 
 const version = async () => {
-  // const response = await fetch('https://update.electronjs.org/nbonamy/witsy/darwin-arm64/1.0.0', {
-  //   mode: 'cors'
-  // })
-  // console.log(response)
-  // const info = await response.json()
-  // return info.name
-  return '1.17.1'
+  const response = await fetch('/update', {
+    mode: 'cors'
+  })
+  const info = await response.json()
+  return info.name
 }
 
 const url = async (version, platform, arch) => {
