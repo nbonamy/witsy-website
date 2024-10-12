@@ -66,7 +66,7 @@ const onSubscribe = () => {
     text-align: right;
 
     .field.has-addons {
-      margin-top: 0.25rem;
+      margin-top: 0.5rem;
       justify-content: flex-end;
       button {
         color: white;
@@ -84,5 +84,24 @@ const onSubscribe = () => {
 
 }
 
+@media (max-width: 980px) {
+  .footer {
+    .columns {
+      flex-direction: column;
+      .column {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      .column:nth-child(2) {
+        .field.has-addons {
+          justify-content: center;
+        }
+      }
+    }
+    .signature {
+      margin-top: 1.5rem;
+    }
+  }
+}
 
 </style>

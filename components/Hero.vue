@@ -64,4 +64,11 @@ import Download from '../components/Download.vue'
 
 }
 
+@media (max-width: 980px) {
+  .hero {
+    .maintitle {
+      margin-top: 3rem;
+    }
+  }
+}
 </style>

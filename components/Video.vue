@@ -34,4 +34,12 @@ defineProps({
 
 }
 
+@media (max-width: 980px) {
+  .video-wrapper {
+    .video {
+      height: auto;
+    }
+  }
+}
+
 </style>

@@ -136,4 +136,14 @@ section.dark {
 
 }
 
+@media (max-width: 980px) {
+  header {
+    padding-bottom: 0rem;
+  }
+  section:not(:first-of-type) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
 </style>

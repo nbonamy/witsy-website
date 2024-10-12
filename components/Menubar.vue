@@ -117,4 +117,17 @@ onMounted(() => {
   }
 }
 
+@media (max-width: 980px) {
+  .topbar-wrapper {
+    position: static;
+    padding-bottom: 0rem;
+    .topbar {
+      justify-content: center;
+      .menu {
+        display: none;
+      }
+    }
+  }
+}
+
 </style>
