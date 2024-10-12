@@ -4,13 +4,13 @@
   <div class='features'>
 
     <a name='features'></a>
-    
+
     <div class='title'>Features - Click any feature to see it in action!</div>
 
     <div class='grid feature-list is-col-min-10 is-gap-4'>
 
       <div class='cell' @click='showVideo(`img/${feature.video}`)' v-for='feature in features' :key='feature.video'>
-        <Feature>
+        <Feature :has-video="feature.video != null">
           <template v-slot:icon><i :class='feature.icon'></i></template>
           <template v-slot:title>{{ feature.title }}</template>
           <template v-slot:description>{{ feature.description }}</template>
@@ -68,11 +68,28 @@ const features = ref([
     video: 'experts.mp4',
   },
   {
-    title: 'Voice',
+    title: 'Voice Chat',
     icon: 'bi-mic',
     description: 'Voice is the feature that allows you to interact with the AI models using your voice. Just click the microphone icon and start talking. In conversation mode, the AI model responses will be spoken back to you and you can continue the conversation!',
     video: 'voice.mp4',
-  }
+  },
+  {
+    title: 'Voice Scratchpad',
+    icon: 'bi-mic',
+    description: 'You can also talk to the AI model in the scratchpad for the ultimate document creation experience! Work with Witsy as if you were collaborating with a peer!',
+    video: 'scratchpad-voice.mp4',
+  },
+  {
+    'title': 'Document Repository',
+    'icon': 'bi-database',
+    'description': 'You can upload any local file to Witsy. You can then ask the AI models questions about your documents, summarize them, or even write a new document for you!',
+    'video': 'rag.mp4',
+  },
+  {
+    title: 'Shortcuts',
+    icon: 'bi-command',
+    description: 'All features of Witsy are accessible through keyboard shortcuts. You can trigger the chat or scratchpad, execute commands and more. You can also customize the shortcuts to fit your needs!',
+  },
 ])
 
 const video = ref(null)

@@ -11,12 +11,23 @@
     <div class="content">
       <slot name="description"></slot>
     </div>
-    <div class="is-overlay">
+    <div class="is-overlay" v-if="props.hasVideo">
       <i class="bi-film"></i>
     </div>
   </div>
 
 </template>
+
+<script setup>
+
+const props = defineProps({
+  hasVideo: {
+    type: Boolean,
+    default: true,
+  }
+})
+
+</script>
 
 <style scoped>
 
