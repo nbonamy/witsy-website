@@ -11,7 +11,7 @@
 
       <div class="cell" @click="showVideo('img/chat.mp4')">
         <Feature>
-          <template v-slot:icon><i class="bi-chat"></i></template>
+          <template v-slot:icon><i class="bi-chat-square"></i></template>
           <template v-slot:title>Chat</template>
           <template v-slot:description>
             Chat is the main window of Witsy. It allows you to interact with all the models in a conversational way. Ask anything you want and the AI will answer.
@@ -36,7 +36,7 @@
           <template v-slot:icon><i class="bi-magic"></i></template>
           <template v-slot:title>AI Commands</template>
           <template v-slot:description>
-            AI commands are a set of predefined actions that you can trigger with a simple keyboard shortcut. From any other application, Witsy will analyze the text you are working,
+            AI commands are a set of predefined actions that you can trigger with a simple keyboard shortcut. From any other application, Witsy will analyze the text you are working on,
             execute the command and paste the result back in your application!
           </template>
         </Feature>
@@ -47,8 +47,8 @@
           <template v-slot:icon><i class="bi-terminal"></i></template>
           <template v-slot:title>Prompt Anywhere</template>
           <template v-slot:description>
-            Prompt Anywhere is a feature that allows you to trigger the AI model from any application. Prompt the AI model with the content you want it to create and it will paste the result directlt in your application.
-            You can the use AI commands to refine it if needed!
+            Prompt Anywhere allows you to trigger an AI model from any application. Prompt the AI model with the content you want it to create and it will paste the result directly in your application.
+            You can then use AI commands to refine it if needed!
           </template>
         </Feature>
       </div>
@@ -66,7 +66,7 @@
 
       <div class="cell" @click="showVideo('img/voice.mp4')">
         <Feature>
-          <template v-slot:icon><i class="bi-megaphone"></i></template>
+          <template v-slot:icon><i class="bi-mic"></i></template>
           <template v-slot:title>Voice</template>
           <template v-slot:description>
             Voice is the feature that allows you to interact with the AI models using your voice. Just click the microphone icon and start talking. In conversation mode,

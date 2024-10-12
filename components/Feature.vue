@@ -11,6 +11,9 @@
     <div class="content">
       <slot name="description"></slot>
     </div>
+    <div class="is-overlay">
+      <i class="bi-film"></i>
+    </div>
   </div>
 
 </template>
@@ -19,7 +22,7 @@
 
 .card {
 
-
+  position: relative;
   cursor: pointer;
 
   .media-left {
@@ -34,6 +37,23 @@
 
   .content {
     padding: 0rem 1.5rem 2rem 1.25rem;
+  }
+
+  .is-overlay {    
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: var(--bulma-card-radius);
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      color: black;
+      font-size: 1.5rem;
+    }
+  }
+
+  &:hover .is-overlay {
+    display: flex;
   }
 
 }
