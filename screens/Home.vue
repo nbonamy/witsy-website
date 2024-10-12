@@ -83,6 +83,7 @@ section:not(:first-of-type) {
 
 section > * { 
   max-width: 60rem;
+  padding: 0 2rem;
   margin: 0 auto;
 }
 
