@@ -30,7 +30,7 @@ import Download from '../components/Download.vue'
 .hero {
 
   margin-bottom: 6rem;
-
+  padding: 0rem;
 
   .maintitle {
 
