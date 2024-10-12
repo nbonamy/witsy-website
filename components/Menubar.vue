@@ -3,7 +3,7 @@
   <div ref="wrapper" class="topbar-wrapper">
     <div class="topbar">
       <div class="logo">
-        <RouterLink :to="{ path: '/', hash: '#header' }">
+        <RouterLink :to="{ path: '/' }">
           <img src="img/logo.png" alt="logo" />
           Witsy
         </RouterLink>
@@ -16,7 +16,7 @@
         <li class="github"><a href="https://github.com/nbonamy/witsy" target="_blank"><img src="https://www.svgrepo.com/show/343674/github.svg"> GitHub</a></li>
       </ul>
       <ul class="menu menu-right">
-        <li><RouterLink :to="{ path: '/', hash: '#header' }" class="download">Download</RouterLink></li>
+        <li><RouterLink :to="{ path: '/' }" class="download">Download</RouterLink></li>
       </ul>
     </div>
   </div>

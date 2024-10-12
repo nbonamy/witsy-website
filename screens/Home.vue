@@ -1,7 +1,7 @@
 
 <template>
 
-  <header id="header">
+  <header>
     <nav>
       <Menubar />
     </nav>
