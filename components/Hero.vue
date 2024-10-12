@@ -6,7 +6,7 @@
     <div class="maintitle">
       <div class="title">AI just <span class="emphasis">one keyboard shortcut</span> away!</div>
       <div class="subtitle">Language models from top AI providers.</div>
-      <div class="subtitle">Instantaneously available on your desktop.</div>
+      <div class="subtitle">Instantaneously accessible on your desktop.</div>
     </div>
 
     <Download />
