@@ -104,7 +104,12 @@ const goto = (section, step) => {
 
 section {
   text-align: left;
-  padding-bottom: 0rem;
+  padding-top: 0rem;
+  padding-bottom: 4rem;
+}
+
+section:first-of-type {
+  padding-top: 4rem;
 }
 
 .box {
