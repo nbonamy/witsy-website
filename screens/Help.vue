@@ -37,8 +37,7 @@
           <li>Make sure <b>OpenAI</b> is selected in the left hand-side list</li>
           <li>Paste your OpenAI secret key in the <b>API key</b> field</li>
           <li>The <b>Chat model</b> list should refresh allowing to select the model of your choice</li>
-          <li>Close the settings</li>
-          <li>You are all set!</li>
+          <li>You are all set!. You can close the settings and start using Witsy</li>
         </ul>
         <div class="nav" @click="goto('openai', 0)"><i class="bi-arrow-left-circle-fill"></i>Back</div>
       </div>
@@ -46,6 +45,42 @@
     </div>
 
   </section>
+
+  <section>
+
+    <div class="ollama">
+      
+      <div class="title">How to setup Witsy for Ollama models</div>
+
+      <div class="box" v-if="activePages.ollama == 0">
+        <div class="subtitle">Install Ollama</div>
+        <ul>
+          <li>Go to the <a href="https://ollama.com" target="_blank">Ollama homepage</a></li>
+          <li>Click <b>Download ↓</b> to download the latest version of Ollama</li>
+          <li>Execute the downloaded installation program to install Ollama on your computer</li>
+          <li>Launch Ollama</li>
+        </ul>
+        <div class="nav" @click="goto('ollama', 1)"><i class="bi-arrow-right-circle-fill"></i>Next</div>
+      </div>
+
+      <div class="box" v-if="activePages.ollama == 1">
+        <div class="subtitle">Setup Witsy</div>
+        <ul>
+          <li>Open Witsy</li>
+          <li>Click on the <b>Settings</b> icon in the bottom left corner</li>
+          <li>Click on <b>Models</b></li>
+          <li>Make sure <b>Ollama</b> is selected in the left hand-side list</li>
+          <li>Select one of the models from <b>Or select one from this list</b></li>
+          <li>Click the <b>Pull</b> button. Warning: this may take some time!</li>
+          <li>You are all set!. You can close the settings and start using Witsy</li>
+          <li>Make sure Ollama is running before you start using Witsy!</li>
+        </ul>
+        <div class="nav" @click="goto('ollama', 0)"><i class="bi-arrow-left-circle-fill"></i>Back</div>
+      </div>
+
+    </div>
+
+    </section>
 
 </template>
 
@@ -56,6 +91,7 @@ import Menubar from '../components/Menubar.vue'
 
 const activePages = ref({
   openai: 0,
+  ollama: 0
 })
 
 const goto = (section, step) => {
@@ -68,6 +104,7 @@ const goto = (section, step) => {
 
 section {
   text-align: left;
+  padding-bottom: 0rem;
 }
 
 .box {
