@@ -13,7 +13,7 @@
     </div>
     <div v-else-if="platform.pf === 'win32' || platform.pf === 'linux'">
       <button class="button" @click="download(platform.pf)">
-        Download for {{ platform.os }} {{ platform.ver }}
+        Download for {{ platform.os }}
       </button>
     </div>
     <div v-else>
