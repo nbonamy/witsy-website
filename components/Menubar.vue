@@ -112,9 +112,29 @@ onMounted(() => {
 
       .download {
         font-weight: 700;
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
       }
     }
   }
+
+  /* &.scrolled {
+    .topbar {
+      .menu-right {
+        li {
+          .download {
+              background-color: #444;
+              color: white;
+              &:hover {
+                background-color: var(--accent-color);
+                color: white;
+              }
+            }
+        }
+      }
+    }
+  } */
+
 }
 
 @media (max-width: 980px) {

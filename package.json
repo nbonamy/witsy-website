@@ -1,0 +1,14 @@
+{
+  "name": "witsy-website",
+  "version": "1.0.0",
+  "description": "Website of [Witsy, the desktop AI assistant](https://github.com/nbonamy/witsy)",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx live-server --entry-file=index.html"
+  },
+  "author": "Nicolas Bonamy",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
