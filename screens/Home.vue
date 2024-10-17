@@ -51,4 +51,10 @@ import Footer from '../components/Footer.vue'
 
 <style scoped>
 
+@media (max-width: 980px) {
+  section:first-of-type {
+    padding: 0rem 1rem;
+  }
+}
+
 </style>

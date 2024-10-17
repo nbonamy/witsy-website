@@ -67,6 +67,9 @@ import Download from '../components/Download.vue'
   .hero {
     .maintitle {
       margin-top: 3rem;
+      .title {
+        padding: 0rem 1rem;
+      }
     }
   }
 }
