@@ -41,7 +41,7 @@ const downloader = useDownload()
 const version = ref(null)
 
 onMounted(async () => {
-  version.value = await downloader.version(platform.pf
+  version.value = await downloader.version(platform.pf)
 })
 
 const download = async (platform, arch) => {
