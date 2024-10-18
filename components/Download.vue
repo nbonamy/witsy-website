@@ -1,19 +1,19 @@
 
 <template>
   <div class="download">
-    <div class="buttons" v-if="platform.pf === 'darwin'">
+    <div class="buttons" v-if="pinfo.pf === 'darwin'">
       <button class="button" @click="download('darwin', 'arm64')">
-        <span class="has-text-weight-bold">Download for {{ platform.os }}</span>
+        <span class="has-text-weight-bold">Download for {{ pinfo.os }}</span>
         <br/><span class="sub">Apple Silicon (M1, M2, M3, M4)</span>
       </button>
       <button class="button" @click="download('darwin', 'x64')">
-        Download for {{ platform.os }}
+        Download for {{ pinfo.os }}
         <br/><span class="sub">Mac Intel architecture</span>
       </button>
     </div>
-    <div v-else-if="platform.pf === 'win32' || platform.pf === 'linux'">
-      <button class="button" @click="download(platform.pf)">
-        Download for {{ platform.os }}
+    <div v-else-if="pinfo.pf === 'win32' || pinfo.pf === 'linux'">
+      <button class="button" @click="download(pinfo.pf)">
+        Download for {{ pinfo.os }}
       </button>
     </div>
     <div v-else>
@@ -35,13 +35,13 @@ import { ref, onMounted } from 'vue'
 import { usePlatform } from '../composables/platform.mjs'
 import { useDownload } from '../composables/download.mjs'
 
-const platform = usePlatform()
+const pinfo = usePlatform()
 const downloader = useDownload()
 
 const version = ref(null)
 
 onMounted(async () => {
-  version.value = await downloader.version(platform.pf)
+  version.value = await downloader.version(pinfo.pf)
 })
 
 const download = async (platform, arch) => {
