@@ -30,7 +30,7 @@ const wrapper = ref(null)
 
 onMounted(() => {
   document.addEventListener('scroll', (ev) => {
-    wrapper.value?.classList.toggle('scrolled', document.body.scrollTop > 0)
+    wrapper.value?.classList.toggle('scrolled', document.body.scrollTop > 300)
   })
 })
 
@@ -114,26 +114,22 @@ onMounted(() => {
         font-weight: 700;
         padding: 0.5rem 1rem;
         border-radius: 2rem;
+        visibility: hidden;
       }
     }
   }
 
-  /* &.scrolled {
+  &.scrolled {
     .topbar {
       .menu-right {
         li {
           .download {
-              background-color: #444;
-              color: white;
-              &:hover {
-                background-color: var(--accent-color);
-                color: white;
-              }
-            }
+            visibility: visible;
+          }
         }
       }
     }
-  } */
+  }
 
 }
 
