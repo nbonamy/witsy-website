@@ -16,7 +16,7 @@ const url = async (version, platform, arch) => {
   if (platform == 'darwin') {
     filename = `Witsy-${version}-${arch}.dmg`
   } else if (platform == 'win32' && arch == 'x64') {
-    filename = `Witsy-${version}-win32-${arch} Setup.exe`
+    filename = `Witsy-${version}-win32-${arch}.Setup.exe`
   }
   return `https://github.com/nbonamy/witsy/releases/download/v${version}/${filename}`
 }
