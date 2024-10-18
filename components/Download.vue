@@ -57,8 +57,8 @@ const download = async (platform, arch) => {
   }
 
   // now downlaod
-  const version = await downloader.version(platform.pf)
-  const url = await downloader.url(version, platform.pf, arch)
+  const version = await downloader.version(platform)
+  const url = await downloader.url(version, platform, arch)
   console.log(url)
   window.location.href = url
 }
