@@ -1,7 +1,7 @@
 
 import { usePlatform } from './platform.mjs'
 
-const version = async () => {
+const version = async (platform) => {
   platform = platform || usePlatform().pf
   const response = await fetch(`https://witsyai.com/update/${platform}`, {
     mode: 'cors'

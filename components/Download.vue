@@ -41,7 +41,7 @@ const downloader = useDownload()
 const version = ref(null)
 
 onMounted(async () => {
-  version.value = await downloader.version()
+  version.value = await downloader.version(platform.pf
 })
 
 const download = async (platform, arch) => {
@@ -57,8 +57,8 @@ const download = async (platform, arch) => {
   }
 
   // now downlaod
-  const version = await downloader.version()
-  const url = await downloader.url(version, platform, arch)
+  const version = await downloader.version(platform.pf)
+  const url = await downloader.url(version, platform.pf, arch)
   console.log(url)
   window.location.href = url
 }
