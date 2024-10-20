@@ -12,11 +12,11 @@ const version = async (platform) => {
 
 const url = async (version, platform, arch) => {
   platform = platform || usePlatform().pf
-  let filename = `Witsy-${platform}-${arch}-${version}.zip`
+  let filename = `Witsy-${version}-${platform}-${arch}.zip`
   if (platform == 'darwin') {
-    filename = `Witsy-${version}-${arch}.dmg`
+    filename = `Witsy-${version}-${platform}-${arch}.dmg`
   } else if (platform == 'win32' && arch == 'x64') {
-    filename = `Witsy-${version}-win32-${arch}.Setup.exe`
+    filename = `Witsy-${version}-${platform}-${arch}.Setup.exe`
   }
   return `https://github.com/nbonamy/witsy/releases/download/v${version}/${filename}`
 }
