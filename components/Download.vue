@@ -11,7 +11,21 @@
         <br/><span class="sub">Mac Intel architecture</span>
       </button>
     </div>
-    <div v-else-if="pinfo.pf === 'win32' || pinfo.pf === 'linux'">
+    <div class="buttons" v-else-if="pinfo.pf === 'linux'">
+      <button class="button" @click="download('linux', 'rpm')">
+        <span class="has-text-weight-bold">Download RPM for {{ pinfo.os }}</span>
+        <br/><span class="sub">RedHat, Fedora, CentOS...</span>
+      </button>
+      <button class="button" @click="download('linux', 'deb')">
+        <span class="has-text-weight-bold">Download DEB for {{ pinfo.os }}</span>
+        <br/><span class="sub">Ubuntu, Debian, Mint...</span>
+      </button>
+      <button class="button" @click="download('linux', '')">
+        <span class="has-text-weight-bold">Download ZIP for {{ pinfo.os }}</span>
+        <br/><span class="sub">Other distros</span>
+      </button>
+    </div>
+    <div v-else-if="pinfo.pf === 'win32'">
       <button class="button" @click="download(pinfo.pf)">
         Download for {{ pinfo.os }}
       </button>
