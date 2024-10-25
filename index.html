@@ -55,6 +55,7 @@
       history: VueRouter.createWebHistory(),
       routes: [
         { path: '/:arch?', component: () => loadModule('./screens/Home.vue', options) },
+        { path: '/privacy', component: () => loadModule('./screens/Privacy.vue', options) },
         { path: '/help', component: () => loadModule('./screens/Help.vue', options) },
       ],
       scrollBehavior(to, from, savedPosition) {
