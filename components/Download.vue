@@ -2,11 +2,11 @@
 <template>
   <div class="download">
     <div class="buttons" v-if="pinfo.pf === 'darwin'">
-      <button class="button" @click="download('darwin', 'arm64')">
+      <button class="button" :class="{ highlight: arch == 'arm64' }" @click="download('darwin', 'arm64')">
         <span class="has-text-weight-bold">Download for {{ pinfo.os }}</span>
         <br/><span class="sub">Apple Silicon (M1, M2, M3, M4)</span>
       </button>
-      <button class="button" @click="download('darwin', 'x64')">
+      <button class="button" :class="{ highlight: arch == 'x64' }"  @click="download('darwin', 'x64')">
         Download for {{ pinfo.os }}
         <br/><span class="sub">Mac Intel architecture</span>
       </button>
@@ -52,9 +52,11 @@ import { useDownload } from '../composables/download.mjs'
 const pinfo = usePlatform()
 const downloader = useDownload()
 
+const arch = ref(null)
 const version = ref(null)
 
 onMounted(async () => {
+  arch.value = router.currentRoute.value.params.arch
   version.value = await downloader.version(pinfo.pf)
 })
 
@@ -98,6 +100,13 @@ const download = async (platform, arch) => {
     color: white;
     font-weight: bold;
     display: inline-block;
+
+    &.highlight {
+      background-color: hsla(var(--bulma-success-h),var(--bulma-success-s),calc(var(--bulma-success-l)*.8),1);
+      &:hover {
+        background-color: hsla(var(--bulma-success-h),var(--bulma-success-s),calc(var(--bulma-success-l)),1);
+      }
+    }
 
     &:hover {
       background-color: var(--accent-color-alpha);
