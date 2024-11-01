@@ -85,7 +85,7 @@
         <div class="question">
           <div class="q">Does Witsy respect my privacy?</div>
           <div class="a">Witsy itself does not collect any of your information. Not even performance data. Everything Witsy needs is saved on your computer and nowhere else.
-            The models you use may have their own privacy policies, so make sure <a href="/policy">to check those out.</a></div>
+            The models you use may have their own privacy policies, so make sure <a href="/privacy">to check those out.</a></div>
         </div>
 
       </div>
