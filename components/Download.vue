@@ -30,6 +30,11 @@
         Download for {{ pinfo.os }}
       </button>
     </div>
+    <div v-else-if="pinfo.pf === 'ios'">
+      <button class="button" @click="download(pinfo.pf)">
+        Download from App Store
+      </button>
+    </div>
     <div v-else>
       <button class="button">
         Sorry. Witsy is not<br/>
@@ -61,6 +66,12 @@ onMounted(async () => {
 })
 
 const download = async (platform, arch) => {
+
+  // ios
+  if (platform === 'ios') {
+    window.location.href = 'https://apps.apple.com/us/app/witsy/id6499087543'
+    return
+  }
 
   // if no arch is provided, we'll use the default one for the platform
   if (!arch) {

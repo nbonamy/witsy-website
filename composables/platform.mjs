@@ -18,6 +18,7 @@ const platform = () => {
   if (os === 'macOS') return 'darwin'
   if (os === 'Windows') return 'win32'
   if (os === 'Linux') return 'linux'
+  if (os === 'iOS') return 'ios'
   return null
 }
 
