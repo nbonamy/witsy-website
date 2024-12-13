@@ -51,7 +51,7 @@ const props = defineProps({
   }
 
   .is-overlay {    
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: var(--overlay-color);
     border-radius: var(--bulma-card-radius);
     display: none;
     justify-content: center;

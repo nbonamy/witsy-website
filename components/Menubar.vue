@@ -77,7 +77,7 @@ onMounted(() => {
     }
 
     a {
-      color: #444;
+      color: var(--bulma-text);
       text-decoration: none;
     }
 

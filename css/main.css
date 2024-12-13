@@ -10,9 +10,20 @@
 :root {
   --background-color: rgb(252, 250, 248);
   --background-color-alpha: rgba(252, 250, 248, 0.9);
+  --overlay-color: rgba(255, 255, 255, 0.85);
   --accent-color: rgba(238, 1, 72, 1.0);
   --accent-color-alpha: rgba(238, 1, 72, 0.8);
   --title-font-family: 'Roboto Slab', serif;
+
+  /* dark mode */
+  @media screen and (prefers-color-scheme: dark) {
+    --background-color: rgb(20, 20, 20);
+    --background-color-alpha: rgba(20, 20, 20, 1.0);
+    --overlay-color: rgba(20, 20, 20, 0.9);
+    --accent-color: rgba(238, 1, 72, 1.0);
+    --accent-color-alpha: rgba(238, 1, 72, 0.8);
+    
+  }
 }
 
 html {
@@ -20,6 +31,7 @@ html {
 }
 
 body {
+  color: var(--bulma-text);
   text-align: center;
 }
 
@@ -55,14 +67,14 @@ section > * {
 section.light {
   background-color: transparent;
   * {
-    color: black;
+    color: var(--bulma-text);
   }
 }
 
 section.white {
   background-color: white;
   * {
-    color: black;
+    color: var(--bulma-text);
   }
 }
 
